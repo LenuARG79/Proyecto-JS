@@ -16,13 +16,14 @@ bienvenida ();
 
 if (edad >"17" && edad <"51") {
     alert ("Ingresaste al juego");
-let opcion = confirm (`Ingresa la letra de la opción deseada:
+let opcion = prompt (`Ingresa la letra de la opción deseada:
 A. Trampa en el laberinto de espinas.
 B. Trampa de la cera y la vela.
 C. Trampa para osos invertida.
 D. Trampa del cuarto de baño.
 
-Para SALIR solo apretá Cancelar`).toUpperCase();
+Para SALIR solo apretá ENTER`).toUpperCase();
+
     switch (opcion) {
         case "A":
             alert ("No quieras llamar su atención, ya la tienes.")
