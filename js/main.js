@@ -1,10 +1,28 @@
-let miNombre = prompt ("Ingresa tu nombre").toUpperCase ()
-    alert ("Bienvenido " + miNombre + " al juego del miedo...\n\nPara continuar oprimí ACEPTAR");
-let edad = parseInt (prompt ("Ingesa su EDAD.\n\nSolo números"));
+function bienvenida() {
+    miNombre = prompt ("Ingresa tu nombre").toUpperCase ()
+    alert (`Bienvenido " ${miNombre}" al juego del miedo...
+           
+          Para continuar oprimí ACEPTAR`); 
+do {   edad = parseInt (prompt (`Ingesa su EDAD.
+
+Solo números`)); 
+    if (isNaN(edad)){
+        alert ("Debes ingresar un número")
+    }        
+}while (isNaN (edad));
+} 
+
+bienvenida ();
 
 if (edad >"17" && edad <"51") {
     alert ("Ingresaste al juego");
-let opcion = prompt("Ingresa la letra de la opción deseada:\n\nA. Trampa en el laberinto de espinas.\nB. Trampa de la cera y la vela.\nC. Trampa para osos invertida.\nD. Trampa del cuarto de baño.\n\nPara SALIR solo apretá ENTER").toUpperCase();
+let opcion = confirm (`Ingresa la letra de la opción deseada:
+A. Trampa en el laberinto de espinas.
+B. Trampa de la cera y la vela.
+C. Trampa para osos invertida.
+D. Trampa del cuarto de baño.
+
+Para SALIR solo apretá Cancelar`).toUpperCase();
     switch (opcion) {
         case "A":
             alert ("No quieras llamar su atención, ya la tienes.")
