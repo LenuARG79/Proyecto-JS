@@ -1,56 +1,197 @@
-function bienvenida() {
-    miNombre = prompt ("Ingresa tu nombre").toUpperCase ()
-    alert (`Bienvenido " ${miNombre}" al juego del miedo...
-           
-          Para continuar oprimí ACEPTAR`); 
-do {   edad = parseInt (prompt (`Ingesa su EDAD.
+let nombreJugador;
 
-Solo números`)); 
-    if (isNaN(edad)){
-        alert ("Debes ingresar un número")
-    }        
-}while (isNaN (edad));
-} 
-
+function bienvenida (){
+    alert (`Bienvenido al juego de supervivencia SAW`);
+    
+    nombreJugador = prompt (`Ingresa tu nombre`).toUpperCase();
+    alert (`${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`);
+}
 bienvenida ();
 
-if (edad >"17" && edad <"51") {
-    alert ("Ingresaste al juego");
-let opcion = prompt (`Ingresa la letra de la opción deseada:
-A. Trampa en el laberinto de espinas.
-B. Trampa de la cera y la vela.
-C. Trampa para osos invertida.
-D. Trampa del cuarto de baño.
+let edad;
 
-Para SALIR solo apretá ENTER`).toUpperCase();
+function validarEdad () {
+    do { 
+        edad = prompt (`Ingresa tu edad`);
+        if (edad < 18) {
+            alert (`Me estas mintiendo, intentalo de nuevo`);
+        } 
+    } while (edad < 18);
+}
+validarEdad ();
 
-    switch (opcion) {
-        case "A":
-            alert ("No quieras llamar su atención, ya la tienes.")
-            break;
-        case "B":
-            alert ("¿Estas seguro/a de faltar a tu trabajo?")
-            break;
-        case "C":
-            alert ("Afuera de los vicios..")
-            break;
-        case "D":
-            alert ("¿Qué estas dispuesto/a a perder?")
-            break;            
-        default:
-            alert ("Abandoste... tu juego a terminado...")
-let fin = prompt ("Ingresa el codigo de 3 letras que acaba de llegar a tu mobil para salir.").toUpperCase();            
-    do {
-        alert ("Pensabas que ibas a salir asi nomas, NO. Fuste seleccionado por alguna razón.");            
-        fin = prompt ("Intentalo de nuevo").toUpperCase ();
-}   while (fin !== "SAW");
-    if (fin == "SAW") { 
-    alert ("HASTA LA PROXIMA PRE-ENTREGA");
+let vitalidad = 100; {
+    alert (`Cuentas con tu energia al ${vitalidad}% pero cada vez que pierdas en los desafios se reduciras un 25% hasta llegar a tu fin. 
+        
+Podras ver tu vitalidad cada vez que termines un desafio.`)
 }
-break;
+
+
+let respuestaCorrecta = 0;
+
+function desafiosSuperados() {
+    respuestaCorrecta += 1;
 }
-} if (edad < "18") {
-    alert ("Todavia no llegó tu hora.");
-} if (edad > "50") {
-    alert ("Ya pasó tu hora, te estamos cuando de un bobaso.");
+
+class Jugador {
+    constructor (nombreJugador, edad, vitalidad) { 
+    this.nombreJugador = nombreJugador;
+    this.edad = edad;
+    this.vitalidad = vitalidad;
+} 
 }
+
+let jugadores = [
+    /*new Jugador*/ ({nombreJugador: "LUCA", edad: 28, vitalidad: 50}),
+    /*new Jugador*/ ({nuevoJugador: "CIRO", edad: 27, vitalidad: 25}),
+    /*new Jugador*/ ({nombreJugador: "EMMA", edad: 40, vitalidad: 25}),
+    /*new Jugador*/ ({nombreJugador: "JIME", edad: 35, vitalidad: 0}),
+];
+
+function nuevoJugador (nombreJugador, edad, vitalidad) {
+    let jugador = new Jugador (nombreJugador, edad, vitalidad);
+    jugadores.push (jugador);
+}
+
+nuevoJugador (nombreJugador, edad, vitalidad);
+
+console.log (`Tu nombre es ${nombreJugador}`);
+console.log (`Tu edad es ${edad}`);
+console.log (`Tu vitalidad actual es ${vitalidad}`);
+console.log (`número de jugadores: ${jugadores.length}`);
+console.log (`Último jugador ingresado: ${jugadores[jugadores.length - 1].nombreJugador}`);
+
+let jugadorABuscar = prompt(`Antes de seguir... ingresa el nombre del jugador que deseas saber como terminó:
+
+Las opciones de busqueda son: Luca, Ciro, Emma y Jimena`).toUpperCase ();
+    
+let jugadorBuscado = jugadores.find(j => j.nombreJugador === jugadorABuscar);
+    alert (`Jugador encontrado:
+Nombre: ${jugadorBuscado.nombreJugador};
+Edad: ${jugadorBuscado.edad};
+Vitalidad: ${jugadorBuscado.vitalidad + "%"};
+Muerte por falta de tiempo para escapar.`);
+    
+let opcion = prompt (`Estas son todas las trampas que tendras que superar si queres salir con vida o algo de ella. Ingresa el número "1" para avanzar:
+
+    1. Trampa en el laberinto de espinas.
+    -  Trampa de la cera y la vela.
+    -  Trampa para osos invertida.
+    -  Trampa del cuarto de baño.
+
+    Para SALIR solo apretá ENTER`).toUpperCase();
+
+        switch (opcion) {
+            case "1":
+                alert (`Aqui te va el desafío. Para pasar a la proxima trampa deberas acertar`);
+                let ingresoPrimerDesafio = parseInt (prompt (`Tres números tengo, tres.
+Si no acertas que número soy, 
+corriendo por ti voy.`));
+                if (ingresoPrimerDesafio === 333) {
+                alert (`Tu vitalidad sigue siendo del ${vitalidad}%.
+Continua con el siguiente desafio`);
+                jugadores.push ({nombreJugador, edad, vitalidad}); 
+                jugadores.vitalidad = vitalidad;
+                console.log ("Tu vitaliodad es: " + jugadores.vitalidad + "%");
+                desafiosSuperados ();    
+                alert (`Desafios superados: ${respuestaCorrecta}`);
+                } else if (ingresoPrimerDesafio != 333) {
+                    vitalidad = vitalidad - 25;
+                    alert (`Tu vitalidad se redujo al ${vitalidad}%. 
+Continua con el siguiente desafio`);
+                jugadores.push ({nombreJugador, edad, vitalidad});
+                jugadores.vitalidad = vitalidad;
+                console.log (`Desafios superados: ${respuestaCorrecta}`);
+                console.log ("Tu vitaliodad es: " + jugadores.vitalidad + "%");
+                }
+                //break;
+            case "2":
+                alert (`¿Estas listo/a para eludir esta trampa?`);
+                let ingresoSegundoDesafio = parseInt (prompt (`Comienzo con uno,
+prosigo con uno,
+pero termino con uno,
+¿me conoce alguno?`));
+                if (ingresoSegundoDesafio === 111) {
+                alert (`Tu vitalidad sigue siendo del ${vitalidad}%.
+Continua con el siguiente desafio, estas de racha`);
+                jugadores.push ({nombreJugador, edad, vitalidad}); 
+                jugadores.vitalidad = vitalidad;
+                console.log ("Tu vitalidad es: " + jugadores.vitalidad + "%");
+                desafiosSuperados ();
+                alert (`Desafios superados: ${respuestaCorrecta}`);
+                } else if (ingresoSegundoDesafio !== 111) {
+                vitalidad = vitalidad - 25;
+                alert (`Tu vitalidad se redujo al ${vitalidad}%. 
+Continua con el siguiente desafio, te deseo mas suerte de la que tienes`);
+                jugadores.push ({nombreJugador, edad, vitalidad});
+                jugadores.vitalidad = vitalidad;
+                console.log (`Desafios superados: ${respuestaCorrecta}`);
+                console.log ("Tu vitalidad es: " + jugadores.vitalidad + "%");     
+                }
+                //break;
+            case "3":
+                alert (`Ahora que sigue.. estas muy cerca de quedar en libertad pero...
+pero antes tenes que responder este acertijo`);
+                let ingresoTercerDesafio = parseInt (prompt (`¿Qué cosa será aquella
+que mirada del derecho
+y mirada del revés
+siempre un número es?`));
+                if (ingresoTercerDesafio === 69) {
+    alert (`Tu vitalidad sigue siendo del ${vitalidad}%.
+Segui avanzando en los desafio, ya queda nada`);
+                jugadores.push ({nombreJugador, edad, vitalidad}); 
+                jugadores.vitalidad = vitalidad;
+                console.log ("Tu vitalidad es: " + jugadores.vitalidad + "%");
+                desafiosSuperados ();
+                alert (`Desafios superados: ${respuestaCorrecta}`);
+                } else if (ingresoSegundoDesafio !== 69) {
+                vitalidad = vitalidad - 25;
+                alert (`Tu vitalidad se redujo al ${vitalidad}%. 
+Continua con el siguiente desafio`);
+                jugadores.push ({nombreJugador, edad, vitalidad});
+                jugadores.vitalidad = vitalidad;
+                console.log (`Desafios superados: ${respuestaCorrecta}`);
+                console.log ("Tu vitalidad es: " + jugadores.vitalidad + "%");
+                }               
+                //break;
+            case "4":
+                alert (`Terminar con vida o lo que te queda de ella solo depende de ti...`);
+                let ingresoCuartoDesafio = parseInt (prompt (`Yo no quiero que os canseis
+y por eso recomiendo que atencion presteis
+para suprimir un perro 
+y así un numero obtendreis.`))
+                if (ingresoCuartoDesafio === 6) {
+                alert (`Tu vitalidad sigue siendo del ${vitalidad}%.`);
+                jugadores.push ({nombreJugador, edad, vitalidad}); 
+                jugadores.vitalidad = vitalidad;
+                console.log ("Tu vitalidad es: " + jugadores.vitalidad + "%");  
+                desafiosSuperados ();
+                alert (`Desafios superados: ${respuestaCorrecta}`);
+                } else if (ingresoSegundoDesafio !== 6) {
+                vitalidad = vitalidad - 25;
+                alert (`Tu vitalidad se redujo al ${vitalidad}%.`);
+                jugadores.push ({nombreJugador, edad, vitalidad});
+                jugadores.vitalidad = vitalidad;
+                console.log (`Desafios superados: ${respuestaCorrecta}`);
+                console.log ("Tu vitalidad es: " + jugadores.vitalidad + "%"); 
+                }
+                if (vitalidad >= 25 && vitalidad <= 100) {
+                    alert (`Has superado las trampas, esto no termina aca.
+Aun no te di la llave para salir.
+Nos vemos en la próxima Pre-Entrega`);
+                } else if (vitalidad === 0) {
+                    alert (`Lo siento... de todos modos seras reemplazo`)
+                }   
+                break;            
+            default:
+                alert ("Abandoste... tu juego a terminado...")
+    let fin = prompt ("Ingresa el codigo de 3 letras que acaba de llegar a tu mobil para salir.").toUpperCase();            
+        do {
+            alert ("Pensabas que ibas a salir asi nomas, NO. Fuste seleccionado por alguna razón.");            
+            fin = prompt ("Intentalo de nuevo").toUpperCase ();
+    }   while (fin !== "SAW");
+        if (fin == "SAW") { 
+        alert ("HASTA LA PROXIMA PRE-ENTREGA");
+    }
+    break;
+    }
