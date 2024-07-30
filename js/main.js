@@ -1,3 +1,5 @@
+let inicioJuego = new Date ();
+
 let nombreJugador;
 
 function bienvenida (){
@@ -43,7 +45,7 @@ class Jugador {
 
 let jugadores = [
     /*new Jugador*/ ({nombreJugador: "LUCA", edad: 28, vitalidad: 50}),
-    /*new Jugador*/ ({nuevoJugador: "CIRO", edad: 27, vitalidad: 25}),
+    /*new Jugador*/ ({nombreJugador: "CIRO", edad: 27, vitalidad: 25}),
     /*new Jugador*/ ({nombreJugador: "EMMA", edad: 40, vitalidad: 25}),
     /*new Jugador*/ ({nombreJugador: "JIME", edad: 35, vitalidad: 0}),
 ];
@@ -63,7 +65,7 @@ console.log (`Último jugador ingresado: ${jugadores[jugadores.length - 1].nombr
 
 let jugadorABuscar = prompt(`Antes de seguir... ingresa el nombre del jugador que deseas saber como terminó:
 
-Las opciones de busqueda son: Luca, Ciro, Emma y Jimena`).toUpperCase ();
+Las opciones de busqueda son: Luca, Ciro, Emma y Jime`).toUpperCase ();
     
 let jugadorBuscado = jugadores.find(j => j.nombreJugador === jugadorABuscar);
     alert (`Jugador encontrado:
@@ -195,3 +197,6 @@ Nos vemos en la próxima Pre-Entrega`);
     }
     break;
     }
+    let finJuego = new Date;
+    let tiempoDeJuego = finJuego - inicioJuego;
+    alert (`Tu juego a durado: ${tiempoDeJuego} milisegundos`);
