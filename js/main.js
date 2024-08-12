@@ -2,13 +2,7 @@ let inicioJuego = new Date ();
 
 const formulario = document.getElementById (`formulario`);
 
-const juego = document.createElement (`div`); 
-juego.className = `juego`;
-
-const mensaje = document.createElement (`div`);
-mensaje.className = `mensaje`
-
-juego.appendChild (mensaje);
+const infoJugador = document.getElementById (`infoJugador`);
 
 let nombreJugador;
 let edad; 
@@ -26,18 +20,20 @@ bienvenida ();*/
 formulario.addEventListener(`submit`, (e) => {
     e.preventDefault ();
     nombreJugador = document.getElementById (`nombre`).value.toUpperCase();
-    edad = parseInt(document.getElementById (`edad`)).valueOf;
-    //mensaje.textContent (`${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`);
+    edad = parseInt(document.getElementById ((`edad`))).valueOf;
+    //document.write (`${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`);
 });
 
-function bienvenida (mensaje){
-    mensaje.textContent (`${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`);
+
+
+/*function bienvenida (){
+    document.write (`${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`);
 }
-bienvenida ();
+bienvenida ();*/
 
 function validarEdad () {
     do { 
-       // edad = prompt (`Ingresa tu edad`);
+       edad == edad;
         if (edad < 18) {
             alert (`Me estas mintiendo, intentalo de nuevo`);
         } 
@@ -49,7 +45,7 @@ validarEdad ();
         
 Podras ver tu vitalidad cada vez que termines un desafio.`)
 }*/
-
+/*
 function desafiosSuperados() {
     respuestaCorrecta += 1;
 }
@@ -63,10 +59,10 @@ class Jugador {
 }
 
 let jugadores = [
-    /*new Jugador*/ ({nombreJugador: "LUCA", edad: 28, vitalidad: 50}),
-    /*new Jugador*/ ({nombreJugador: "CIRO", edad: 27, vitalidad: 25}),
-    /*new Jugador*/ ({nombreJugador: "EMMA", edad: 40, vitalidad: 25}),
-    /*new Jugador*/ ({nombreJugador: "JIME", edad: 35, vitalidad: 0}),
+    ({nombreJugador: "LUCA", edad: 28, vitalidad: 50}),
+    ({nombreJugador: "CIRO", edad: 27, vitalidad: 25}),
+    ({nombreJugador: "EMMA", edad: 40, vitalidad: 25}),
+    ({nombreJugador: "JIME", edad: 35, vitalidad: 0}),
 ];
 
 function nuevoJugador (nombreJugador, edad, vitalidad) {
@@ -218,4 +214,4 @@ Nos vemos en la próxima Pre-Entrega`);
     }
     let finJuego = new Date;
     let tiempoDeJuego = finJuego - inicioJuego;
-    alert (`Tu juego a durado: ${tiempoDeJuego} milisegundos`);
+    alert (`Tu juego a durado: ${tiempoDeJuego} milisegundos`);*/
