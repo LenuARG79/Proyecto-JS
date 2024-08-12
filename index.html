@@ -14,15 +14,23 @@
     <label for="edad">Ingresa tu edad</label>
     <input type="number" id="edad" required >
     <br/>
+    <div id="validarEdad"></div>
+    <br/>
     <button type="submit">Iniciar</button>
     </form>
 
-    <div class="infoJugador" id="infoJugador">
-        <div></div>
-
-    </div>
-
-
+    <div class="infoJugador" id="infoJugador"></div>
+    <table id="tablaInfoJugador">
+        <tr>
+          <th id="nombreInfoJugador">Nombre</th>
+        </tr>
+        <tr>
+        <th id="edadInfoJugador">Edad</th>
+        </tr>  
+        <tr>
+        <th id="inicioInfoJugador">Hora</th>
+        </tr>
+      </table>
 
     <script src="js/main.js"></script>
 </body>

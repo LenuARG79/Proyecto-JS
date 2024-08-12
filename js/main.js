@@ -1,9 +1,8 @@
 let inicioJuego = new Date ();
 
 const formulario = document.getElementById (`formulario`);
-
 const infoJugador = document.getElementById (`infoJugador`);
-
+const tableInfoJugador = document.getElementById (`tablaInfoJugador`);
 let nombreJugador;
 let edad; 
 let vitalidad = 100;
@@ -17,21 +16,25 @@ let respuestaCorrecta = 0;
 }
 bienvenida ();*/
 
-formulario.addEventListener(`submit`, (e) => {
-    e.preventDefault ();
+formulario.addEventListener(`submit`, (e) => {e.preventDefault ();
     nombreJugador = document.getElementById (`nombre`).value.toUpperCase();
-    edad = parseInt(document.getElementById ((`edad`))).valueOf;
-    //document.write (`${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`);
+    edad = parseInt(document.getElementById (`edad`).value);
+    do {  
+         if (edad < 18) {
+             validarEdad.innerHTML = `Me estas mintiendo, intentalo de nuevo`;
+             document.getElementById (`edad`).value = " ";
+             document.getElementById (`edad`).focus ();
+             edad = parseInt (document.getElementById (`edad`).value);
+         } 
+     } while (edad < 18);
+    if (edad >= 18) { 
+        if (validarEdad.innerHTML.includes (`Me estas mintiendo, intentalo de nuevo`)) {
+            validarEdad.innerHTML = " ";
+        infoJugador.innerHTML = `${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`
+    }};
 });
 
-
-
-/*function bienvenida (){
-    document.write (`${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`);
-}
-bienvenida ();*/
-
-function validarEdad () {
+/*function validarEdad () {
     do { 
        edad == edad;
         if (edad < 18) {
@@ -39,7 +42,7 @@ function validarEdad () {
         } 
     } while (edad < 18);
 }
-validarEdad ();
+validarEdad ();*/
 
 /*{alert (`Cuentas con tu energia al ${vitalidad}% pero cada vez que pierdas en los desafios se reduciras un 25% hasta llegar a tu fin. 
         
