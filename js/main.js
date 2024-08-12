@@ -2,23 +2,16 @@ let inicioJuego = new Date ();
 
 const formulario = document.getElementById (`formulario`);
 const infoJugador = document.getElementById (`infoJugador`);
-const tableInfoJugador = document.getElementById (`tablaInfoJugador`);
 let nombreJugador;
 let edad; 
 let vitalidad = 100;
 let respuestaCorrecta = 0;
 
-/*function bienvenida (){
-    alert (`Bienvenido al juego de supervivencia SAW`);
-    
-    nombreJugador = prompt (`Ingresa tu nombre`).toUpperCase();
-    alert (`${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`);
-}
-bienvenida ();*/
-
 formulario.addEventListener(`submit`, (e) => {e.preventDefault ();
     nombreJugador = document.getElementById (`nombre`).value.toUpperCase();
     edad = parseInt(document.getElementById (`edad`).value);
+    localStorage.setItem (`nombreJugador`, nombreJugador);
+    localStorage.setItem (`edad`, edad);
     do {  
          if (edad < 18) {
              validarEdad.innerHTML = `Me estas mintiendo, intentalo de nuevo`;
@@ -32,17 +25,20 @@ formulario.addEventListener(`submit`, (e) => {e.preventDefault ();
             validarEdad.innerHTML = " ";
         infoJugador.innerHTML = `${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`
     }};
-});
 
-/*function validarEdad () {
-    do { 
-       edad == edad;
-        if (edad < 18) {
-            alert (`Me estas mintiendo, intentalo de nuevo`);
-        } 
-    } while (edad < 18);
+const datosJugador = document.getElementById (`datosJugador`);
+const datoNombreJugador = document.getElementById (`datoNombreJugador`);
+const datoEdadJugador = document.getElementById (`datoEdadJugador`);
+const datoEdadNoValido = document.getElementById (`datoEdadNoValida`);
+const datoVitalidadJugador = document.getElementById (`datoVitalidadJugador`);
+
+datoNombreJugador.innerHTML = localStorage.getItem(`nombreJugador`);
+datoEdadJugador.innerHTML = localStorage.getItem(`edad`);
+    if (edad < 18) {
+       datoEdadNoValido.innerHTML = `Edad no válida`;
 }
-validarEdad ();*/
+datoVitalidadJugador.innerHTML = vitalidad;
+});
 
 /*{alert (`Cuentas con tu energia al ${vitalidad}% pero cada vez que pierdas en los desafios se reduciras un 25% hasta llegar a tu fin. 
         
