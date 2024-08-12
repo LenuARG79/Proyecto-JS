@@ -1,20 +1,43 @@
 let inicioJuego = new Date ();
 
-let nombreJugador;
+const formulario = document.getElementById (`formulario`);
 
-function bienvenida (){
+const juego = document.createElement (`div`); 
+juego.className = `juego`;
+
+const mensaje = document.createElement (`div`);
+mensaje.className = `mensaje`
+
+juego.appendChild (mensaje);
+
+let nombreJugador;
+let edad; 
+let vitalidad = 100;
+let respuestaCorrecta = 0;
+
+/*function bienvenida (){
     alert (`Bienvenido al juego de supervivencia SAW`);
     
     nombreJugador = prompt (`Ingresa tu nombre`).toUpperCase();
     alert (`${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`);
 }
-bienvenida ();
+bienvenida ();*/
 
-let edad;
+formulario.addEventListener(`submit`, (e) => {
+    e.preventDefault ();
+    nombreJugador = document.getElementById (`nombre`).value.toUpperCase();
+    edad = parseInt(document.getElementById (`edad`)).valueOf;
+    //mensaje.textContent (`${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`);
+});
+
+function bienvenida (mensaje){
+    mensaje.textContent (`${nombreJugador} tu fuiste seleccionado/a... Tomaras el lugar del Dr. Gordon quien ya no está entre nosotros.`);
+}
+bienvenida ();
 
 function validarEdad () {
     do { 
-        edad = prompt (`Ingresa tu edad`);
+       // edad = prompt (`Ingresa tu edad`);
         if (edad < 18) {
             alert (`Me estas mintiendo, intentalo de nuevo`);
         } 
@@ -22,14 +45,10 @@ function validarEdad () {
 }
 validarEdad ();
 
-let vitalidad = 100; {
-    alert (`Cuentas con tu energia al ${vitalidad}% pero cada vez que pierdas en los desafios se reduciras un 25% hasta llegar a tu fin. 
+/*{alert (`Cuentas con tu energia al ${vitalidad}% pero cada vez que pierdas en los desafios se reduciras un 25% hasta llegar a tu fin. 
         
 Podras ver tu vitalidad cada vez que termines un desafio.`)
-}
-
-
-let respuestaCorrecta = 0;
+}*/
 
 function desafiosSuperados() {
     respuestaCorrecta += 1;
