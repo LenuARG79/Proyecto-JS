@@ -115,16 +115,13 @@ document.body.appendChild (formularioJugador);
     botonContinuar.innerText = 'Continuar';
     formularioJugador.appendChild(botonContinuar);
 
-    botonContinuar.addEventListener('click', () => { 
     const trampasAElegir = document.createElement (`div`);
-    trampasAElegir.innerText = `Estas son todas las trampas que tendras que superar si queres salir con vida o algo de ella. 
-        - Trampa en el laberinto de espinas. 
-        - Trampa de la cera y la vela.
-        - Trampa para osos invertida.
-        - Trampa del cuarto de baño.`;
-    
-    document.body.appendChild (trampasAElegir);    
-    
+    document.body.appendChild (trampasAElegir);
+
+    botonContinuar.addEventListener('click', () => { 
+    trampasAElegir.innerText = `Estas es solo la 1er trampa que deberas superar si queres salir con vida o algo de ella. 
+        - Trampa en el laberinto de espinas.`; 
+           
     const botonTrampa1 = document.createElement('button');
     botonTrampa1.innerText = 'Trampa 1';
     trampasAElegir.appendChild(botonTrampa1);
