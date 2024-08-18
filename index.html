@@ -3,31 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>JS 3er Pre-entrega</title>
+    <title>3ra Pre Entrega</title>
+    <!--<link rel="stylesheet" href="style.css">-->
 </head>
 <body>
-    <h1>Bienvendo al juego de Supervivencia SAW</h1>
-    <form id="formulario">
-    <label for="nombre">Ingresa tu nombre</label> 
-    <input type="text" id="nombre" required>
-    <br/>
-    <label for="edad">Ingresa tu edad</label>
-    <input type="number" id="edad" required >
-    <div id="validarEdad"></div>
-    <br/>
-    <button type="submit">Iniciar</button>
+    <h1>¡Bienvenido al juego del miedo!</h1>
+    <h3>Si estas aca es por algo, ingresá tus datos:</h3>
+    <form id="datosJugador">
+        <label for="nombre">Ingresá tu nombre</label>
+        <input type="text" id="nombre" required>
+        <br><br>
+        <label for="edad">Ingresa tu edad</label>
+        <input type="number" id="edad" required>
+        <br><br>
+        <button type="submit">Ingresar</button>
+        <br><br>
     </form>
-
-    <div class="infoJugador" id="infoJugador"></div>
-    
-    <div class="datosJugador">
-      <div class="datoNombreJugador" id="datoNombreJugador"></div>
-      <div class="datoEdadJugador" id="datoEdadJugador"></div>
-      <div class="datoVitalidadJugador" id="datoVitalidadJugador"></div>
-      <div class="datoUltimoJugador" id="datoUltimoJugador"></div>
-    </div>
-
+    <p id="jugadorEdadMenor"></p>
+    <p id="jugadorNombre"></p>
+    <p id="jugadorEdad"></p>
+    <p id="jugadorVitalidad"></p>
+    <br>
+    <p>Elije de a una las trampas a superar:</p>
+    <form id="accionForm">
+        <select id="accionSeleccionar">
+            <option value="laberinto">Trampa del aberinto de espinas</option>
+            <option value="ceraVela">Trampa de la cera y la vela</option>
+            <option value="OsosInvertida">Trampa para Osos invertida</option>
+            <option value="banio">Trampa del cuarto de baño</option>
+        </select>
+        <button type="submit">Seleccionar</button>
+    </form>
+    <p id="trampaUno"></p>
+    <p id="mensajeTrampaUno"></p>
+    <p id="trampaDos"></p>
+    <p id="mensajeTrampaDos"></p>
+    <p id="trampaTres"></p>
+    <p id="mensajeTrampaTres"></p>
+    <p id="trampaCuatro"></p>
+    <p id="mensajeTrampaCuatro"></p>
+    <div id="mochila"></div>
     <script src="js/main.js"></script>
 </body>
 </html>
+
