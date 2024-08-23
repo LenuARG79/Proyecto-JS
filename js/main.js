@@ -15,7 +15,7 @@ class Juego {
                       accion === "banio" ? this.banio () :
                       null;
         if (this.mochila.length === 4) {
-            alert(this.mensajeFinal());
+            swal(this.mensajeFinal());
         }              
         return resultado;
 }

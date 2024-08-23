@@ -1,0 +1,110 @@
+/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+
+body {
+    background-color: black;
+    background-image: url(/img/fondo\ de\ pantalla.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: white;
+    text-shadow: 0px 0px 60px grey;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 60px;
+}
+
+h3 {
+    color: white;
+    text-shadow: 0px 0px 60px gray;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 50px;
+}
+
+#datosJugador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+label {
+    color: white;
+    text-shadow: 0px 0px 60px gray;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+}
+
+#nombre {
+    height: 20px;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 40%;
+    padding-left: 5px;
+}
+
+#edad {
+    height: 20px;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 46.5%;
+    padding-left: 5px;
+}
+
+#btnSubmit {
+    height: 25px;
+    width: 80px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    margin-left: 47vw;
+}
+
+#btnSubmit:hover{
+    background-color: gray;
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-shadow: 0px 0px 60px gray;
+    text-align: center;
+}
+
+#accionForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+option {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#accionSeleccionar {
+    height: 25px;
+    width: 240px;
+    margin-left: 42vw;
+    margin-bottom: 20px;
+}
+
+aside {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    position: fixed;
+    top: 90px;
+    right: 40px;
+}
+
+.fa-bag-shopping {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    font-size: 50px;
+    color: whitesmoke;
+}
