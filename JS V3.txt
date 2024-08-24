@@ -9,87 +9,24 @@ class Juego {
         this.mensajeFinal = "¡Volviste a tener suerte! Nos vemos en el final";      
 }
     realizarAccion(accion) {
-        switch (accion) {
-            case "laberinto":
-                this.laberinto();
-                break;
-
-            case "ceraVela":
-                this.ceraVela();
-                break;
-
-            case "OsosInvertida":
-                this.OsosInvertida();
-                break;
-
-            case "banio":
-                this.banio();
-                break;
-                         
-            default: 
-                swal ("Acción no reconocida");
-                break;
-        }
-       /* let resultado = accion === "laberinto" ? this.laberinto() :
+        let resultado = accion === "laberinto" ? this.laberinto() :
                       accion === "ceraVela" ? this.ceraVela() :
                       accion === "OsosInvertida" ? this.OsosInvertida () :
                       accion === "banio" ? this.banio () :
-                      null;*/
+                      null;
         if (this.mochila.length === 4) {
             swal(this.mensajeFinal());
         }              
-        /*return resultado;*/
+        return resultado;
 }
-    crearDesafio (id, texto,respuestaCorrecta, recompenza) {
-        const desafioDiv = document.getElementById (id);
-        desafioDiv.innerText = `Desafio: ${texto}`;
-
-        const label = document.createElement (`label`);
-        label.innerText = `Ingresa la respuesta`;
-
-        const input = document.createElement (`input`);
-        input.setAttribute (`type`, `number`);
-
-        label.appendChild (input);
-        desafioDiv.appendChild (label);
-
-        input.addEventListener(`change`,() => {
-        const respuesta = parseInt (input.value);
-        this.validarRespuesta (respuesta, respuestaCorrecta, recompenza, desafioDiv);
-    });
-    }   
-
-    validarRespuesta (respuesta, respuestaCorrecta, recompenza, contenedor) {
-        let mensaje = " ";
-
-        if (respuesta === respuestaCorrecta) {
-            this.mochila.push(recompenza);
-            mensaje = `Superaste el desafío y has conseguedo una ${recompenza}. ${this.checkvitalidad()}`;
-            this.actualizarMochila ();
-            contenedor.innerText = " ";
-        } else {
-            const lostvitalidad = 25;
-            this.vitalidad -= lostvitalidad;
-            mensaje = `No pudiste y has perdido un ${lostVitalidad}% de tu vitalidad. ${this.checkvitalidad()}. Inténtalo de nuevo para conseguir el objeto perdido en esta sala.`; 
-        }
-
-        contenedor.innerText = mensaje;
-    } 
-    
-    actualizarMochila () {
-        const mochilaMostrar = this.mochila.length > 0 ?
-        this.mochila.map(item => `<li>${item}</li>`).join('') : 
-        "Tu mochila está vacía.";
-        document.getElementById("mochila").innerHTML = `<h3>Mochila:</h3><ul>${mochilaMostrar}</ul>`;
-    }
 
     laberinto() {
-        this.crearDesafio (`trampaUno`, 
-        `¡Tres números tengo, tres!. 
+        document.getElementById (`trampaUno`).innerText = `Desafío:
+        ¡Tres números tengo, tres!. 
         Si no acertas que número soy, 
-        corriendo por ti voy.`, 333, `llave`);
-    } 
-        /*const labelTrampaUno = document.createElement(`label`);
+        corriendo por ti voy.`
+
+        const labelTrampaUno = document.createElement(`label`);
         labelTrampaUno.setAttribute (`id`, `labelTrampaUno`);
         labelTrampaUno.textContent = `Ingresá la respuesta`;
 
@@ -126,16 +63,15 @@ class Juego {
         }
         document.getElementById(`mensajeTrampaUno`).innerText = mensajeTrampaUno;
     })
-    };*/
+    };
     
     ceraVela() {
-        this.crearDesafio (`trampaDos`,
-        `Comienzo con uno,
+            document.getElementById (`trampaDos`).innerText = `Desafío:
+        Comienzo con uno,
         prosigo con uno,
         pero termino con uno,
-        ¿me conoce alguno?`, 111, `navaja`);
-    }        
-        /*const labelTrampaDos = document.createElement(`label`);
+        ¿me conoce alguno?`
+            const labelTrampaDos = document.createElement(`label`);
             labelTrampaDos.setAttribute (`id`, `labelTrampaDos`);
             labelTrampaDos.textContent = `Ingresá la respuesta`;
     
@@ -172,16 +108,15 @@ class Juego {
             }
             document.getElementById(`mensajeTrampaDos`).innerText = mensajeTrampaDos;
         })
-        };*/
+        };
     
         OsosInvertida() {
-            this.crearDesafio (`trampaTres`,
-        `¿Qué cosa será aquella
+            document.getElementById (`trampaTres`).innerText = `Desafío:
+        ¿Qué cosa será aquella
         que mirada del derecho
         y mirada del revés
-        siempre un número es?`, 69, `cuerda`);
-    }
-        /*    const labelTrampaTres = document.createElement(`label`);
+        siempre un número es?`
+            const labelTrampaTres = document.createElement(`label`);
             labelTrampaTres.setAttribute (`id`, `labelTrampaTres`);
             labelTrampaTres.textContent = `Ingresá la respuesta`;
     
@@ -218,16 +153,15 @@ class Juego {
             }
             document.getElementById(`mensajeTrampaTres`).innerText = mensajeTrampaTres;
         })
-        };*/    
+        };    
         
         banio() {
-            this.crearDesafio (`trampaCuatro`,
-        `Yo no quiero que os canseis
+            document.getElementById (`trampaCuatro`).innerText = `Desafío:
+        Yo no quiero que os canseis
         y por eso recomiendo que atencion presteis
         para suprimir un perro 
-        y así un numero obtendreis.`, 6, `lapicera`)
-    }
-         /*const labelTrampaCuatro = document.createElement(`label`);
+        y así un numero obtendreis.`
+            const labelTrampaCuatro = document.createElement(`label`);
             labelTrampaCuatro.setAttribute (`id`, `labelTrampaCuatro`);
             labelTrampaCuatro.textContent = `Ingresá la respuesta`;
     
@@ -264,7 +198,7 @@ class Juego {
             }
             document.getElementById(`mensajeTrampaCuatro`).innerText = mensajeTrampaCuatro;
         })
-        }; */ 
+        };  
 
     checkvitalidad() {
         return this.vitalidad > 0 
