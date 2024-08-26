@@ -84,7 +84,7 @@ class Juego {
         const respuesta = parseInt (input.value);
         this.validarRespuesta (respuesta, respuestaCorrecta, recompenza, icono, desafioDiv);
     });
-    }   
+    };  
 
     validarRespuesta (respuesta, respuestaCorrecta, recompenza, icono, contenedor) {
         let mensaje = " ";
