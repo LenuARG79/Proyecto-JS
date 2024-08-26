@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Saw",
+        "year": 2004,
+        "overview": "Two strangers awaken in a room with no recollection of how they got there, and soon discover they're pawns in a deadly game perpetrated by a notorious serial killer.",
+        "poster_path": "/dHYvIgsax8ZFgkz1OslE4V6Pnf5.jpg"
+    },
+    {
+        "title": "Saw II",
+        "year": 2005,
+        "overview": "A detective and his team must rescue eight people trapped in a factory by the twisted serial killer known as Jigsaw.",
+        "poster_path": "/sfAxbtKkNLwBLzgtGvcNaUGpM1A.jpg"
+    },
+    {
+        "title": "Saw III",
+        "year": 2006,
+        "overview": "Jigsaw kidnaps a doctor to keep him alive while he watches his new apprentice put an unlucky citizen through a brutal test.",
+        "poster_path": "/sHKR84xqne27H9zMHdZk0mJfzj7.jpg"
+    },
+    {
+        "title": "Saw IV",
+        "year": 2007,
+        "overview": "Despite Jigsaw's death, Detective Hoffman and Agent Strahm are both expected to continue the game.",
+        "poster_path": "/dZQ8OEK8ATvKpGg1qWfdP1Q0g2a.jpg"
+    },
+    {
+        "title": "Saw V",
+        "year": 2008,
+        "overview": "Following Jigsaw's grisly demise, Mark Hoffman is commended as a hero, but the game is not over.",
+        "poster_path": "/kgfm3trNmX5m6HwJjAqbnIhGzjE.jpg"
+    },
+    {
+        "title": "Saw VI",
+        "year": 2009,
+        "overview": "Special Agent Strahm is dead, and Detective Hoffman has emerged as the unchallenged successor to Jigsaw's legacy.",
+        "poster_path": "/wBWqcUwKcsGM3fqkIk9ju5TMoSP.jpg"
+    },
+    {
+        "title": "Saw: The Final Chapter",
+        "year": 2010,
+        "overview": "As a deadly battle rages over Jigsaw's brutal legacy, a group of Jigsaw survivors gather to seek the support of a self-help guru who survived the killer's carnage.",
+        "poster_path": "/uwgOsq5vfMAA7yZn9kLk5oF0mXf.jpg"
+    },
+    {
+        "title": "Jigsaw",
+        "year": 2017,
+        "overview": "Bodies are turning up around the city, each having met a uniquely gruesome demise. As the investigation proceeds, evidence points to one man: John Kramer.",
+        "poster_path": "/3lHeNa5TAi6wI5EJ0uFlzzy5XsD.jpg"
+    },
+    {
+        "title": "Spiral: From the Book of Saw",
+        "year": 2021,
+        "overview": "A criminal mastermind unleashes a twisted form of justice in Spiral, the terrifying new chapter from the book of Saw.",
+        "poster_path": "/lcyKve7nXRFgRyms9M1bndNkKOx.jpg"
+    }
+]

@@ -1,9 +1,3 @@
-/** {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}*/
-
 body {
     background-color: black;
     background-image: url(/img/fondo\ de\ pantalla.jpg);
@@ -18,6 +12,47 @@ h1 {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     margin-top: 60px;
+}
+
+#contenedorPelicula {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#asidePelicula {
+    position: fixed;
+    top: 40px;
+    left: 20px;
+}
+
+#resultados {
+    margin-top: 10px;
+    border: 2px double whitesmoke;
+    max-width: 400px;
+    max-height: 600px;
+    overflow-y: auto;
+    text-shadow: 0px 50px 80px red;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#buscador {
+    height: 20px;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5px;
+}
+
+#buscar {
+    height: 25px;
+    width: 80px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h3 {
@@ -45,7 +80,8 @@ label {
     height: 20px;
     width: 300px;
     margin-top: 10px;
-    margin-left: 40%;
+    margin-left: auto;
+    margin-right: auto;    
     padding-left: 5px;
 }
 
@@ -53,7 +89,8 @@ label {
     height: 20px;
     width: 100px;
     margin-top: 10px;
-    margin-left: 46.5%;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 5px;
 }
 
@@ -62,7 +99,8 @@ label {
     width: 80px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 700;
-    margin-left: 47vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #btnSubmit:hover{
@@ -89,11 +127,23 @@ option {
 #accionSeleccionar {
     height: 25px;
     width: 240px;
-    margin-left: 42vw;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 20px;
 }
 
-aside {
+select {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+}
+
+input {
+    margin-left: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+}
+
+#asideMochila {
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     position: fixed;
@@ -105,6 +155,17 @@ aside {
     position: fixed;
     top: 40px;
     right: 40px;
-    font-size: 50px;
+    font-size: 40px;
     color: whitesmoke;
+}
+
+#mochila {
+    color: whitesmoke;
+    font-size: 15px;
+}
+
+#mochila li {
+    color: whitesmoke;
+    font-size: 20px;
+    padding: 10px;
 }

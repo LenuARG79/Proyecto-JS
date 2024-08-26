@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>3ra Pre Entrega</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/sweetalert/dist/sweetalert.css">
     <link rel="stylesheet" href="cs/style.css">
 </head>
 <body>
     <h1>¡Bienvenido al juego del miedo!</h1>
+    <br>
+    <div id="contenedorPelicula">
+    <label for="buscador">¿Cual es la pelicula en la que esta badada en este juego?</label>
+    <input type="text" id="buscador">
+    <br>
+    <button id="buscar">Buscar</button>
+    <aside id="asidePelicula">
+    <div id="resultados"></div>
+    </aside>    
+    </div>
+    <br>
     <h3>Si estas aca es por algo, ingresá tus datos:</h3>
     <form id="datosJugador">
         <label for="nombre">Ingresá tu nombre</label>
@@ -44,8 +56,8 @@
     <p id="mensajeTrampaTres"></p>
     <p id="trampaCuatro"></p>
     <p id="mensajeTrampaCuatro"></p>
-    <aside id="aside_mochila">
-    <i class="fa-solid fa-bag-shopping fa-beat"></i>   
+    <aside id="asideMochila">
+    <i class="fa-solid fa-bag-shopping fa-beat"></i>
     <div id="mochila"></div>
     </aside>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
